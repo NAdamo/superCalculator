@@ -1,3 +1,8 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <h1>
+    {{title}}
+  </h1>
+  <sc-calculator-form (operationEvent)="onOperation($event)"></sc-calculator-form>
+  <sc-calculator-result [operation]="operation" (calcHistory)="onHistory($event)"></sc-calculator-result>
+  <sc-calculator-history [calcHistory]="calcHistory"></sc-calculator-history>
+</div>

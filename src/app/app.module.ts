@@ -4,10 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { CalculatorFormComponent } from './calculator-form/calculator-form.component';
+import { CalculatorResultComponent } from './calculator-result/calculator-result.component';
+import { CalculatorHistoryComponent } from './calculator-history/calculator-history.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CalculatorFormComponent,
+    CalculatorResultComponent,
+    CalculatorHistoryComponent
   ],
   imports: [
     BrowserModule,
