@@ -5,7 +5,6 @@ import {By} from '@angular/platform-browser';
 import {Operators} from '../operators.enum';
 import {FormsModule} from '@angular/forms';
 import {Operation} from '../operation';
-import {componentModuleUrl} from '@angular/compiler';
 
 @Component({
   selector: 'sc-calculator-form',
@@ -74,19 +73,19 @@ describe('CalculatorFormComponent', () => {
     });
 
     it('should have contain a calculate button', () => {
-      const de = getElementsByCss('button')
+      const de = getElementsByCss('button');
       expect(de.length).toBe(1);
       expect(de[0].nativeElement.textContent).toContain('Calculate');
     });
 
-    it('should fire an event van calculate button clicked', async(() => {
+    it('should fire an event when calculate button clicked', async(() => {
       let lastEvent: Operation = new Operation();
       component.operation = {
         firstOperand: 12,
         secondOperand: 3,
         operator: Operators.MULTIPLE
       };
-      fixture.detectChanges()
+      fixture.detectChanges();
       component.operationEvent.subscribe(event => lastEvent = event);
       const de = fixture.debugElement.query(By.css('form'));
       de.triggerEventHandler('submit', null);

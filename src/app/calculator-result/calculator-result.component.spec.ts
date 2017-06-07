@@ -13,8 +13,12 @@ export class MockCalculatorResultComponent {
   operation;
   @Output()
   calcHistory = new EventEmitter<CalculatorHistory>();
-  calculate() {}
-  delay() {}
+
+  calculate() {
+  }
+
+  delay() {
+  }
 }
 
 describe('CalculatorResultComponent', () => {
@@ -88,7 +92,9 @@ describe('CalculatorResultComponent', () => {
         secondOperand: 14,
         operator: Operators.MULTIPLE
       };
+
       component.delay(500);
+
       expect(component.showResult).toEqual('.');
       tick(500);
       expect(component.showResult).toEqual('..');

@@ -59,7 +59,7 @@ export class CalculatorResultComponent implements OnInit, OnChanges {
       if (typeof this.operation.firstOperand !== 'number' || typeof this.operation.secondOperand !== 'number') {
         return 'Missing operand';
       }
-      switch (this.operation.operator) {
+      switch (this.operation.operator as Operators) {
         case Operators.ADD:
           console.log('add');
           result = this.operation.firstOperand + this.operation.secondOperand;
